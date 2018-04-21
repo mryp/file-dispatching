@@ -1,0 +1,29 @@
+﻿<Page x:Class="FileDispatching.Views.StartView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FileDispatching.Views"
+      xmlns:cal="http://www.caliburnproject.org" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Background="White"
+      Title="StartView">
+    <StackPanel>
+        <Label Margin="10,10,0,0">フォルダパス：</Label>
+        <DockPanel Margin="10,0,10,0">
+            <Button Content="参照" Height="24" DockPanel.Dock="Right" MinWidth="50" Margin="10,0,0,0"
+                cal:Message.Attach="[Event Click] = [Action SetSelectFolder]" />
+            <TextBox TextWrapping="NoWrap" Height="24"
+                 Text="{Binding FolderPath}"/>
+        </DockPanel>
+        <StackPanel Margin="10,10,10,10">
+            <Label>サブフォルダ名正規表現 例→ \[(?&lt;name&gt;.+?)\].*</Label>
+            <TextBox TextWrapping="NoWrap" Height="24"
+                     Text="{Binding RegexPattern}"/>
+        </StackPanel>
+
+        <Button Content="処理開始" Height="48" Margin="10,10,10,0"
+                cal:Message.Attach="[Event Click] = [Action Start]"/>
+    </StackPanel>
+</Page>

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FileDispatching
+namespace FileDispatching.Views
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// ProcView.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProcView : Page
     {
-        public MainWindow()
+        public ProcView()
         {
             InitializeComponent();
         }
